@@ -9,15 +9,18 @@ import Navbar from 'react-bootstrap/Navbar';
 
 const Header = () => {
     return (
-        <Container>
+        <Container className='mt-4'>
             <div className="text-center">
                 <img src={logo} alt="" />
+
                 <p className='text-secondary'><small>Journalism Without Fear or Favour</small></p>
+
                 <p>{moment().format("dddd, MMMM D, YYYY ")}</p>
             </div>
+
             <div className="d-flex">
-                <Button variant="danger">Latest</Button>
-                <Marquee className='text-danger' speed={56} >
+                <Button variant="danger" >Latest</Button>
+                <Marquee className='text-danger' speed={56}>
                     I can be a React component, multiple React components, or just some text.
                 </Marquee>
             </div>
@@ -40,7 +43,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </Container >
+        </Container>
     );
 };
 
