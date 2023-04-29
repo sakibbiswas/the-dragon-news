@@ -7,10 +7,12 @@ import RightNav from '../../Shared/Rightnav/RightNav';
 import {
     Outlet
 } from "react-router-dom";
+import Navigationvar from '../../Shared/NavigationBar/Navigationvar';
 const Main = () => {
     return (
         <div>
             <Header></Header>
+            <Navigationvar></Navigationvar>
             <Container>
                 <Row>
                     <Col lg={3}>
