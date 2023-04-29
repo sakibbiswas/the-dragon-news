@@ -2,13 +2,14 @@ import moment from 'moment';
 import React from 'react';
 import { Card, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FaBookmark, FaShareAlt } from 'react-icons/fa';
+import { FaBookmark, FaEye, FaRegStar, FaShareAlt, FaStar } from 'react-icons/fa';
+import Rating from 'react-rating';
 
 const Catagorycard = ({ newss }) => {
-    const { _id, title, author, name, details, image_url, thumbnail_url } = newss;
+    const { _id, title, author, name, details, image_url, thumbnail_url, total_view, rating } = newss;
     return (
         <Card className=" mb-4">
-            <Card.Header className='d-flex'>
+            <Card.Header className='d-flex align-items-center'>
                 <Image style={{ height: '40px' }} src={author?.img} roundedCircle />
                 <div className='ps-2 flex-grow-1'>
                     <p className='mb-0'>{author?.name}</p>
@@ -29,7 +30,25 @@ const Catagorycard = ({ newss }) => {
                 </Card.Text>
 
             </Card.Body>
-            <Card.Footer className="text-muted">2 days ago</Card.Footer>
+            <Card.Footer className="text-muted d-flex">
+                <div className="flex-grow-1 ">
+                    <Rating
+                        placeholderRating={rating.number}
+                        readonly
+
+                        emptySymbol={<FaRegStar></FaRegStar>}
+                        placeholderSymbol={<FaStar className='text-warning'></FaStar>}
+                        fullSymbol={<FaStar></FaStar>}
+
+                    >
+
+                    </Rating>
+                    <span>{rating?.number}</span>
+                </div>
+                <div>
+                    <p><FaEye></FaEye> {total_view}</p>
+                </div>
+            </Card.Footer>
         </Card>
     );
 };
