@@ -3,7 +3,7 @@ import { createContext } from 'react';
 import { getAuth } from "firebase/auth";
 export const Authcontext = createContext(null)
 const Authprovider = ({ children }) => {
-    const user = { displayname: 'kodor ALi' }
+    const user = null;
     const authinfo = {
         user,
     }

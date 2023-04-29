@@ -3,14 +3,6 @@ import logo from '../../assets/logo.png'
 import moment from 'moment';
 import { Button, Container } from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
-
-import { useContext } from 'react';
-import { Authcontext } from '../../providers/Authprovider';
-
-
 const Header = () => {
 
     return (

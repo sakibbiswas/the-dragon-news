@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Navigate to='/category/0'></Navigate>
-  }
+  },
   {
     path: '/',
     element: <Loginlayout></Loginlayout>,
