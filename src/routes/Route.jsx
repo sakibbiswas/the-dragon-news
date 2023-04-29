@@ -1,19 +1,16 @@
 
 
-import Main from "../components/Layout/Main";
-import Home from "../pages/Home/Home";
 
 
-
-const router = createBrowserRouter([
+const router = crea([
   {
     path: "/",
-        element: <Main></Main>,
-        children: [
-            {
-                path: '/',
-                element:<Home></Home>
-            }
+    element: <Main></Main>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      }
     ]
   },
 ]);

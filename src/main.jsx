@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 import Main from './components/Layout/Main.jsx';
 import Home from './pages/Home/Home.jsx';
+import Category from './pages/Home/category/Category';
+import Newlayout from './components/Layout/Newlayout';
+import News from './pages/Home/news/news/News';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,10 +20,24 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-
-      }
+      },
+      {
+        path: '/category/:id',
+        element: <Category></Category>,
+        loader: ({ params }) => fetch(`http://localhost:4000/Categories/${params.id}`)
+      },
     ]
   },
+  {
+    path: '/news',
+    element: <Newlayout></Newlayout>,
+    children: [
+      {
+        path: '/news/:id',
+        element: <News></News>
+      }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
