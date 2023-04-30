@@ -6,7 +6,14 @@ import { Authcontext } from '../../providers/Authprovider';
 import { Link } from 'react-router-dom';
 
 const Navigationvar = () => {
-    const { user } = useContext(Authcontext)
+    const { user, logOut } = useContext(Authcontext)
+    const handellogOut = () => {
+        logOut()
+            .then()
+            .catch(error => {
+                console.log(error);
+            })
+    }
     return (
         <Container>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -30,7 +37,7 @@ const Navigationvar = () => {
 
                             {
                                 user ?
-                                    <Button variant="secondary">Logout</Button> :
+                                    <Button onClick={handellogOut} variant="secondary">Logout</Button> :
                                     <Link to='/login'>
                                         <Button variant="secondary">Login</Button>
                                     </Link>
