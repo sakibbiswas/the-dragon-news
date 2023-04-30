@@ -1,11 +1,14 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../../providers/Authprovider';
 
 const Login = () => {
     const { signIN } = useContext(Authcontext)
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/category/0'
+    console.log(location);
     const Navigate = useNavigate()
     const handellogin = (event) => {
         event.preventDefault();
@@ -17,7 +20,7 @@ const Login = () => {
             .then(result => {
                 const loggeduser = result.user;
                 console.log(loggeduser);
-                Navigate('/category/0')
+                Navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
