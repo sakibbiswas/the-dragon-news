@@ -18,6 +18,7 @@ import Loginlayout from './components/Layout/Loginlayout';
 import Login from './pages/login/Login/Login';
 import Register from './pages/login/Register/Register';
 import Privaterout from './routes/privaterout/Privaterout';
+import Terms from './Shared/terms/Terms';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>,
       },
+      {
+        path: '/terms',
+        element: <Terms></Terms>
+      }
     ]
   },
   {
@@ -56,7 +61,8 @@ const router = createBrowserRouter([
         path: '/news/:id',
         element: <Privaterout><News></News></Privaterout>,
         loader: ({ params }) => fetch(`http://localhost:4000/news/${params.id}`)
-      }
+      },
+
     ]
   }
 ]);
