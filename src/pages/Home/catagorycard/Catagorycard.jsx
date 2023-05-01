@@ -34,7 +34,7 @@ const Catagorycard = ({ newss }) => {
             </Card.Body>
             <Card.Footer className="text-muted d-flex">
                 <div className="flex-grow-1 d-flex align-items-center ">
-                    <Rating style={{ maxWidth: 250 }} value={rating} readOnly />
+                    <Rating style={{ maxWidth: 250 }} value={Math.round(rating?.number || 0)} readOnly />
                     <span className='ms-2'>{rating?.number}</span>
                 </div>
                 <div>
