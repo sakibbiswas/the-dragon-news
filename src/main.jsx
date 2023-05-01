@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       {
         path: ':id',
         element: <Category></Category>,
-        loader: ({ params }) => fetch(`http://localhost:4000/Categories/${params.id}`)
+        loader: ({ params }) => fetch(`https://the-news-server-sakibbiswas.vercel.app/Categories/${params.id}`)
       },
     ]
   },
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       {
         path: '/news/:id',
         element: <Privaterout><News></News></Privaterout>,
-        loader: ({ params }) => fetch(`http://localhost:4000/news/${params.id}`)
+        loader: ({ params }) => fetch(`https://the-news-server-sakibbiswas.vercel.app/news/${params.id}`)
       },
 
     ]
